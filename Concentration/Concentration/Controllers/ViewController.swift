@@ -9,12 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     //MARK: --> Properties
+    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    
     var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
-    var emojiChoices = ["👻", "🎃" , "👽" , "🤬"]
     
 
     //MARK: --> Outlets
@@ -30,20 +31,33 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.firstIndex(of: sender) {
-            flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
+            game.chooseCard(at: cardNumber)
+            updateViewFromModel()
+        } else {
+            print("Chosen card was not i n cardButtons")
         }
     }
     
     //MARK: --> Function/Methods
-    func flipCard(withEmoji emoji: String, on button: UIButton) {
-        if button.currentTitle == emoji {
-            button.setTitle("", for: .normal)
-            button.backgroundColor = .systemOrange
-        } else {
-            button.setTitle(emoji, for: .normal)
-            button.backgroundColor = .white
+    func updateViewFromModel() {
+        for index in cardButtons.indices {
+            let button = cardButtons[index]
+            let card = game.cards[index]
+            if card.isFaceUp {
+                button.setTitle(emoji(for: card), for: .normal)
+                button.backgroundColor = .white
+            } else {
+                button.setTitle("", for: .normal)
+                button.backgroundColor = card.isMatched ? .clear : .systemOrange
+            }
             
         }
+    }
+    
+    var emojiChoices = ["👻", "🎃" , "👽" , "🤬"]
+    
+    func emoji(for card: Card) -> String {
+        return "?"
     }
 }
 
