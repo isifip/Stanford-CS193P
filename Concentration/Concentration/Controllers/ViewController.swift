@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         }
     }
     
-
+    
     //MARK: --> Outlets
     @IBOutlet var flipCountLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     //MARK: --> IBActions
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
@@ -45,6 +45,8 @@ class ViewController: UIViewController {
             let card = game.cards[index]
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: .normal)
+                button.setTitle("Something", for: .normal)
+                button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
                 button.backgroundColor = .white
             } else {
                 button.setTitle("", for: .normal)
@@ -54,10 +56,16 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojiChoices = ["👻", "🎃" , "👽" , "🤬"]
+    var emojiChoices = ["👻", "🎃" , "👽" , "🤬", "🦉", "🦅" , "🐴" , "🦄", "🐝"]
+    var emoji = [Int:String]()
     
     func emoji(for card: Card) -> String {
-        return "?"
+        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
+            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
+            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+        }
+        return emoji[card.identifier] ?? "?"
     }
+    
 }
 
