@@ -45,8 +45,6 @@ class ViewController: UIViewController {
             let card = game.cards[index]
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: .normal)
-                button.setTitle("Something", for: .normal)
-                button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
                 button.backgroundColor = .white
             } else {
                 button.setTitle("", for: .normal)
