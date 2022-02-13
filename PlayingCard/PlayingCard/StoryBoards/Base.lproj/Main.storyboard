@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,17 +16,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="guH-g6-7gE" customClass="PlayingCardView" customModule="PlayingCard" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="20" y="149" width="374" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="800" id="J2s-4w-ch1"/>
+                                    <constraint firstAttribute="width" secondItem="guH-g6-7gE" secondAttribute="height" multiplier="5:8" id="Nr0-4h-YgG"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="guH-g6-7gE" secondAttribute="trailing" constant="20" id="AhC-Gw-6zq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="guH-g6-7gE" secondAttribute="bottom" id="UdP-4i-46a"/>
-                            <constraint firstItem="guH-g6-7gE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yC9-q3-WiG"/>
-                            <constraint firstItem="guH-g6-7gE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zWK-GA-CbQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="guH-g6-7gE" secondAttribute="trailing" constant="20" id="AhC-Gw-6zq"/>
+                            <constraint firstItem="guH-g6-7gE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JOX-pM-Xou"/>
+                            <constraint firstItem="guH-g6-7gE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ti9-kS-9zJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="guH-g6-7gE" secondAttribute="bottom" constant="20" id="UdP-4i-46a"/>
+                            <constraint firstItem="guH-g6-7gE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yC9-q3-WiG"/>
+                            <constraint firstItem="guH-g6-7gE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="zWK-GA-CbQ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,9 +41,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
