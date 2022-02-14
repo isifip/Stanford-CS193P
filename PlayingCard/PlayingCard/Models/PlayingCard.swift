@@ -43,11 +43,11 @@ struct PlayingCard: CustomStringConvertible {
         }
         
         static var all: [Rank] {
-            var allRanks: [Rank] = [.ace]
+            var allRanks: [Rank] = [Rank.ace]
             for pips in 2...10 {
                 allRanks.append(.numeric(pips))
             }
-            allRanks += [.face("J"), .face("Q"), .face("K")]
+            allRanks += [Rank.face("J"), .face("Q"), .face("K")]
             return allRanks
         }
         
