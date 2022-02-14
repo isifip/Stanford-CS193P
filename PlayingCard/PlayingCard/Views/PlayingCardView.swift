@@ -9,9 +9,9 @@ import UIKit
 
 class PlayingCardView: UIView {
     
-    var rank: Int = 11 { didSet { setNeedsDisplay(); setNeedsDisplay() } }
+    var rank: Int = 5 { didSet { setNeedsDisplay(); setNeedsDisplay() } }
     var suit: String = "❤️" { didSet { setNeedsDisplay(); setNeedsDisplay() } }
-    var isFaceUp: Bool = true { didSet { setNeedsDisplay(); setNeedsDisplay() } }
+    var isFaceUp: Bool = false { didSet { setNeedsDisplay(); setNeedsDisplay() } }
     
     private var cornerString: NSAttributedString {
         return centeredAttributedString(rankString+"\n"+suit, fontSize: cornerFontSize)
@@ -44,9 +44,18 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedRect.fill()
         
-        if let faceCardImage = UIImage(named: rankString+suit) {
-            faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+        if isFaceUp {
+            if let faceCardImage = UIImage(named: rankString+suit) {
+                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+            } else {
+                drawPips()
+            }
+        } else {
+            if let cardBackImage = UIImage(named: "cardBack") {
+                cardBackImage.draw(in: bounds)
+            }
         }
+       
         
     }
     
