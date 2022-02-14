@@ -7,11 +7,16 @@
 
 import UIKit
 
+
+@IBDesignable
 class PlayingCardView: UIView {
     
-    var rank: Int = 5 { didSet { setNeedsDisplay(); setNeedsDisplay() } }
+    @IBInspectable
+    var rank: Int = 12 { didSet { setNeedsDisplay(); setNeedsDisplay() } }
+    @IBInspectable
     var suit: String = "❤️" { didSet { setNeedsDisplay(); setNeedsDisplay() } }
-    var isFaceUp: Bool = false { didSet { setNeedsDisplay(); setNeedsDisplay() } }
+    @IBInspectable
+    var isFaceUp: Bool = true { didSet { setNeedsDisplay(); setNeedsDisplay() } }
     
     private var cornerString: NSAttributedString {
         return centeredAttributedString(rankString+"\n"+suit, fontSize: cornerFontSize)
@@ -45,13 +50,13 @@ class PlayingCardView: UIView {
         roundedRect.fill()
         
         if isFaceUp {
-            if let faceCardImage = UIImage(named: rankString+suit) {
+            if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
             } else {
                 drawPips()
             }
         } else {
-            if let cardBackImage = UIImage(named: "cardBack") {
+            if let cardBackImage = UIImage(named: "cardBack", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 cardBackImage.draw(in: bounds)
             }
         }
