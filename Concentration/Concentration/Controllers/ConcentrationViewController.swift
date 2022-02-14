@@ -43,19 +43,20 @@ class ConcentrationViewController: UIViewController {
     
     //MARK: --> Function/Methods
     private func updateViewFromModel() {
-        for index in cardButtons.indices {
-            let button = cardButtons[index]
-            let card = game.cards[index]
-            if card.isFaceUp {
-                button.setTitle(emoji(for: card), for: .normal)
-                button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
-                button.backgroundColor = .lightGray
-            } else {
-                button.setTitle("", for: .normal)
-                button.backgroundColor = card.isMatched ? .clear : .systemIndigo
+        //if cardButtons != nil {
+            for index in cardButtons.indices {
+                let button = cardButtons[index]
+                let card = game.cards[index]
+                if card.isFaceUp {
+                    button.setTitle(emoji(for: card), for: .normal)
+                    button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
+                    button.backgroundColor = .lightGray
+                } else {
+                    button.setTitle("", for: .normal)
+                    button.backgroundColor = card.isMatched ? .clear : .systemIndigo
+                }
             }
-            
-        }
+        //}
     }
     
     var theme: String? {
@@ -67,15 +68,15 @@ class ConcentrationViewController: UIViewController {
     }
     
     //private var emojiChoices = ["👻", "🎃" , "👽" , "🤬", "🦉", "🦅" , "🐴" , "🦄", "🐝"]
-    private var emojiChoices = "👻🎃👽🤬🦉🦅🐴🦄🐝"
-    private var emoji = [Card:String]()
+    var emojiChoices = "👻🎃👽🤬🦉🦅🐴🦄🐝"
+    var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojiChoices.count > 0 {
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
             emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
         }
-        return emoji[card] ?? "?"
+        return emoji[card] ?? "X"
     }
     
 }

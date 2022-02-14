@@ -8,11 +8,35 @@
 import UIKit
 
 class ConcentrationThemeChooserViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    let themes = [
+        "Sports":"⚽️🏀🏈⚾️🥎🎾🏐🏉🏓🏋️‍♀️🏄‍♀️🏌️",
+        "Animals":"🐱🐈🐈‍⬛🐶🐕‍🦺🦮🐕🐩🐰🐇🐭🐹",
+        "Faces":"🤣😘😊😍🥰😁😀😉☺️😬😜😅",
+    ]
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//
+//    }
+    
+    
+    //MARK: --> Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Choose Theme" {
+            if let themeName = (sender as? UIButton)?.currentTitle {
+                if let theme = themes[themeName] {
+                    if let cvc = segue.destination as? ConcentrationViewController {
+                        cvc.theme = theme
+                    }
+                } else {
+                    print("something went wrong")
+                }
+            } else {
+                print("couldnt get current title")
+            }
+        }
     }
-
+    
 }
