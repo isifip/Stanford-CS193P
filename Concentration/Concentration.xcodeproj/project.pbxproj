@@ -15,6 +15,7 @@
 		C71A946527AD290900273F77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71A946327AD290900273F77 /* LaunchScreen.storyboard */; };
 		C734C27727AD53B90031CBEA /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734C27627AD53B90031CBEA /* Concentration.swift */; };
 		C734C27927AD55200031CBEA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734C27827AD55200031CBEA /* Card.swift */; };
+		C7D3CF7E27BA8AD200ACD2B9 /* ConcentrationThemeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3CF7D27BA8AD200ACD2B9 /* ConcentrationThemeChooserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C71A946627AD290900273F77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C734C27627AD53B90031CBEA /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		C734C27827AD55200031CBEA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C7D3CF7D27BA8AD200ACD2B9 /* ConcentrationThemeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeChooserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				C71A945C27AD290800273F77 /* ConcentrationViewController.swift */,
+				C7D3CF7D27BA8AD200ACD2B9 /* ConcentrationThemeChooserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				C734C27727AD53B90031CBEA /* Concentration.swift in Sources */,
 				C734C27927AD55200031CBEA /* Card.swift in Sources */,
 				C71A945927AD290800273F77 /* AppDelegate.swift in Sources */,
+				C7D3CF7E27BA8AD200ACD2B9 /* ConcentrationThemeChooserViewController.swift in Sources */,
 				C71A945B27AD290800273F77 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
