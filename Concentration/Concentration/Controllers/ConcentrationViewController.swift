@@ -43,7 +43,7 @@ class ConcentrationViewController: UIViewController {
     
     //MARK: --> Function/Methods
     private func updateViewFromModel() {
-        //if cardButtons != nil {
+        if cardButtons != nil {
             for index in cardButtons.indices {
                 let button = cardButtons[index]
                 let card = game.cards[index]
@@ -56,7 +56,7 @@ class ConcentrationViewController: UIViewController {
                     button.backgroundColor = card.isMatched ? .clear : .systemIndigo
                 }
             }
-        //}
+        }
     }
     
     var theme: String? {

@@ -34,7 +34,8 @@ class ConcentrationThemeChooserViewController: UIViewController {
                     print("something went wrong")
                 }
             } else {
-                print("couldnt get current title")
+                //print("couldnt get current title")
+                print("\(String(describing: (sender as? UIButton)?.currentTitle))")
             }
         }
     }
