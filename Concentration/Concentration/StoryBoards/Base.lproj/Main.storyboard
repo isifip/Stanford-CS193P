@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConcentrationViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1045" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1045.5" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ML0-YI-ZMv">
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3734" y="1450"/>
+            <point key="canvasLocation" x="-3734" y="1162"/>
         </scene>
         <!--Concentration Theme Chooser View Controller-->
         <scene sceneID="ZsE-aH-Gsa">
@@ -201,7 +201,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Sports"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="IA0-SF-fgL"/>
+                                            <action selector="changeTheme:" destination="DqZ-WE-JnK" eventType="touchUpInside" id="qvQ-gd-RC4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjW-aU-ZYV">
@@ -210,7 +210,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Faces"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="h6G-hv-8Gg"/>
+                                            <action selector="changeTheme:" destination="DqZ-WE-JnK" eventType="touchUpInside" id="Vt2-7H-LmO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlB-Fg-xLY">
@@ -219,7 +219,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Animals"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="LWN-oQ-m7E"/>
+                                            <action selector="changeTheme:" destination="DqZ-WE-JnK" eventType="touchUpInside" id="De9-bI-qsS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -233,23 +233,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QDl-WO-3YI"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="nwW-FM-vt9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNy-AO-0WJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3734" y="677"/>
+            <point key="canvasLocation" x="-3734" y="340"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="2SZ-XH-nqW">
             <objects>
                 <splitViewController allowDoubleColumnStyle="YES" id="qFe-SN-nJu" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="GQg-YF-vuO" kind="relationship" relationship="masterViewController" id="zTh-yX-Ktt"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="8hp-6S-5SU"/>
+                        <segue destination="DqZ-WE-JnK" kind="relationship" relationship="masterViewController" id="jd4-Gu-wmk"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cds-dU-uvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4516" y="677"/>
+            <point key="canvasLocation" x="-4519" y="340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hsk-cO-Ifd">
@@ -257,7 +260,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GQg-YF-vuO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NGn-Rm-A9f">
-                        <rect key="frame" x="0.0" y="24" width="420" height="50"/>
+                        <rect key="frame" x="0.0" y="24" width="1366" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -267,11 +270,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZF-1g-ARh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3734" y="-70"/>
+            <point key="canvasLocation" x="-3734" y="-348"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LWN-oQ-m7E"/>
+        <segue reference="jd4-Gu-wmk"/>
+        <segue reference="nwW-FM-vt9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemIndigoColor">

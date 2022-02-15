@@ -15,11 +15,12 @@ class ConcentrationThemeChooserViewController: UIViewController {
         "Faces":"🤣😘😊😍🥰😁😀😉☺️😬😜😅",
     ]
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//
-//    }
+    
+    @IBAction func changeTheme(_ sender: Any) {
+    
+    }
+    
+    
     
     
     //MARK: --> Navigation
